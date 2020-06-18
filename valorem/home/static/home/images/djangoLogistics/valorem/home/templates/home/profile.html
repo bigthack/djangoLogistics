@@ -1,0 +1,64 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  Your company is {{ user.company.company_name }}
+  <p><a href="{% url 'logout' %}">Logout</a></p>
+  <p><a href="{% url 'password_reset' %}">Reset password</a></p>
+  <button type="button" onclick="window.location.href='/accounts/profile/add_shipment';">Click here to add a shipment manually</button>
+  <p>Here are your orders:</p>
+  <table style="width:100%">
+    <tr>
+      <th>Date</th>
+      <th>Tracking Number</th>
+      <th>Price($)</th>
+      <th>Weight(Lbs)</th>
+      <th>Service Level</th>
+      <th>Destination</th>
+      <th>Ref 1</th>
+      <th>Ref 2</th>
+    </tr>
+    {% for shipment in page_obj %}
+      {% if shipment.user_name|title == user.username|title %}
+        <tr>
+          <td>{{ shipment.shipment_date }}</td>
+          <td>{{ shipment.tracking_number }}</td>
+          <td>{{ shipment.total_price }}</td>
+          <td>{{ shipment.weight }}</td>
+          <td>{{ shipment.service_level }}</td>
+          <td>{{ shipment.destination }}</td>
+          <td>{{ shipment.ref_1 }}</td>
+          <td>{{ shipment.ref_2 }}</td>          
+        </tr>    
+      {% endif %}
+    {% endfor %}
+  </table>
+  <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; First </a>
+            <br>
+            <a href="?page={{ page_obj.previous_page_number }}"> Previous </a>
+        {% endif %}
+        <br>
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+        <br>
+        {% if page_obj.has_next %}
+            <a float="right" href="?page={{ page_obj.next_page_number }}"> Next </a>
+            <br>
+            <a href="?page={{ page_obj.paginator.num_pages }}"> End  &raquo;</a>
+        {% endif %}
+    </span>
+  </div>
+  
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Login</a>
+{% endif %}
+{% endblock %}

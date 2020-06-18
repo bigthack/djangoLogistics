@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+</head>
+<div class="topnav">
+  <a href="{% url 'home' %}" class="active" ><img src="/valorem/home/static/home/images/Valorem Logo Image.jpeg"></a>
+  {% if user.is_authenticated %}
+  <div></div>
+  <a style="float:right;" href="{% url 'profile' %}">Profile</a>
+  {% else %}
+  <div></div>
+  <a style="float:right;" href="{% url 'login' %}">Login</a>
+  {% endif %}  
+</div>
+<body>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+ <p>Designed by Trevor Thacker</p>
+ <p>Copyright 2020 Valorem Logistics All Rights Reserved</p>
+</footer>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="topnav">
+  <a href="{% url 'home' %}" class="active" ><img src="/valorem/home/static/home/images/logo.jpeg"></a>
+    {% if user.is_authenticated %}
+    <div></div>
+    <a style="float:right;" href="{% url 'profile' %}">Profile</a>
+    {% else %}
+    <div></div>
+    <a style="float:right;" href="{% url 'login' %}">Login</a>
+    {% endif %}     
+</div>
+
+<!-- Header -->
+<header class="header">
+  <h1 class="w3-margin w3-jumbo">Valorem</h1>
+  <h1 class="w3-margin w3-jumbo">Logistics</h1>
+  <!--button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>-->
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content"></div>
+    <div class="w3-threethird">
+      <h1>About Us</h1>
+      <h5 class="w3-padding-32">What To Expect</h5>
+
+      <p class="w3-text-grey">We work in the industry and understand all the rules and regulations regarding the carriers. As a customer we'll get to know you, and how you like your operations run. We'll match your preferences with our experience so that your logistics runs smoothly. View us as a portal to access most of the carriers operating in the USA. Let us know what you need to move, and we'll provide you with the top three carrier options on any lane. Most offices will offer you pricing based on volumes, however we work on the same pricing structure for all customers. So regardless of your volume, we'll be a good financial fit for your company. 
+       Our customers work with one point of contact in the office. So should you need to move a shipment, query a charge, or file a claim, you can deal with the same person. We prefer to take your quotes via email and you can expect a response in twenty minutes or less.</p>
+       <h5 class="w3-padding-32">What We Expect</h5>
+       <p class="w3-text-grey">As a team we expect your professionalism, and that you will weigh up service and reliability over saving a dollar. We extend net-30 terms and trust our customers to honor the timeline so that we can enjoy a mutually beneficial relationship.</p>
+    </div>
+
+    
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+ <p>Designed by Trevor Thacker</p>
+ <p>Copyright 2020 Valorem Logistics All Rights Reserved</p>
+</footer>
+
+<!--<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>-->
+
+</body>
+</html>

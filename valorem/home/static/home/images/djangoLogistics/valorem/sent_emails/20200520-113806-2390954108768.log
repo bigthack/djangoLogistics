@@ -1,0 +1,26 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: thackattack2003@gmail.com
+Date: Wed, 20 May 2020 15:38:06 -0000
+Message-ID: 
+ <158998908640.5864.6006672325806208747@DESKTOP-30OJR4J.hsd1.fl.comcast.net>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/Mw/5gn-edcc61f4762557737a78/
+
+Your username, in case you’ve forgotten: trevor
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------
