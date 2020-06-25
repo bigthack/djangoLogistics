@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'valorem.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Valorem',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'valorem',
         'USER': 'postgres',
-        'PASSWORD': '39083908Aa',
+        'PASSWORD': '39083908',
         'HOST': '127.0.0.1',
-        'PORT': '5000',
+        'PORT': '55018',
     }
 }
 
