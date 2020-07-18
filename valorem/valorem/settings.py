@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9(t@!y0*bk)myv2t7pcoom5x#l!i-73#rvzqk7m8j$do4ew%4s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['eb-django-app-dev.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'valorem.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'valorem',
-        'USER': 'postgres',
-        'PASSWORD': '39083908',
-        'HOST': '127.0.0.1',
-        'PORT': '55018',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Valorem',
+        'USER': 'master',
+        'PASSWORD': '39083908Aa',
+        'HOST': 'ls-f9b8911b7879833ebc62be529f424f352be9518c.chvzwgow8rb2.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -154,9 +154,12 @@ REST_FRAMEWORK = {
     ]
 }
 
-CSRF_COOKIE_SECURE = True
-
-SECURE_SSL_REDIRECT = True
-
-SESSION_COOKIE_SECURE = True
-
+CORS_REPLACE_HTTPS_REFERER      = False
+HOST_SCHEME                     = "http://"
+SECURE_PROXY_SSL_HEADER         = None
+SECURE_SSL_REDIRECT             = False
+SESSION_COOKIE_SECURE           = False
+CSRF_COOKIE_SECURE              = False
+SECURE_HSTS_SECONDS             = None
+SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
+SECURE_FRAME_DENY               = False

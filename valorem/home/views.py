@@ -17,6 +17,8 @@ class Login(generic.DetailView):
 
 
 
+
+
 def profile(request):
     shipments = Shipment.objects.all()
     content = {"shipments": shipment}

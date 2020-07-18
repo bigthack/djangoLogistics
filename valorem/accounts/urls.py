@@ -12,7 +12,8 @@ router.register(r'companies', view.CompanyViewSet)
 router.register(r'shipments', view.ShipmentViewSet)
 
 urlpatterns = [
-    path('login/', views.Login.as_view(), name='login'),    
+    path('login/', views.Login.as_view(), name='login'),  
+    path('signup/', views.SignUp.as_view(), name='signup'),  
     path('profile/', views.index , name='profile'), 
     path('profile/add_shipment', view.get_shipment, name='add_shipment'),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),

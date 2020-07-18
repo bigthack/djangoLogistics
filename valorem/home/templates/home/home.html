@@ -18,23 +18,27 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 <!-- Navbar -->
 <div class="topnav">
-  <a href="{% url 'home' %}" class="active" ><img src="/valorem/home/static/home/images/logo.jpeg"></a>
+  <a href="{% url 'home' %}" class="active" ><img src="{% static 'home/images/logo.png' %}" height=22 width=24.2></a>
     {% if user.is_authenticated %}
     <div></div>
     <a style="float:right;" href="{% url 'profile' %}">Profile</a>
     {% else %}
     <div></div>
     <a style="float:right;" href="{% url 'login' %}">Login</a>
-    {% endif %}     
+    {% endif %}    
+    <a href="{% url 'offerings' %}">Offerings</a>
+    <a href="{% url 'growth' %}">Growth</a>
+    <a href="{% url 'about' %}">About Us</a>
 </div>
 
 <!-- Header -->
-<header class="header">
-  <h1 class="w3-margin w3-jumbo">Valorem</h1>
-  <h1 class="w3-margin w3-jumbo">Logistics</h1>
+<div height="200" width="100%" style="background-image: url(https://storage.needpix.com/rsynced_images/container-3964493_1280.jpg); background-size: cover; background-repeat: no-repeat;">
+  <header class="header" height="20%" width="100%">
+    <h1 style="text-align: center; padding-top: 10%; padding-bottom: 10%; padding-left: 0%; padding-right: 0%; color: white;">Valorem Logistics</h1>
+  
   <!--button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>-->
-</header>
-
+  </header>
+</div>
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content"></div>

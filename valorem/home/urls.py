@@ -14,4 +14,5 @@ urlpatterns = [
     path('<int:question_id>/vote/', views.vote, name='vote'),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('/api/', include(router.urls)),
+    
 ] 
